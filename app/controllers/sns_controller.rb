@@ -14,7 +14,7 @@ class SnsController < ActionController::Base
 
     def create
         @post = Post.new(post_params)
-        logger.debug @article
+        @post.save
     end
 
     def post_params
