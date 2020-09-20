@@ -1,4 +1,6 @@
 class SnsController < ActionController::Base
+    protect_from_forgery with: :null_session
+    protect_from_forgery 
     layout 'app'
     def index
     end
@@ -7,20 +9,15 @@ class SnsController < ActionController::Base
     end
 
     def new
-        @item = Post.new
+        @post = Post.new
     end
 
     def create
-
+        @post = Post.new(post_params)
+        logger.debug @article
     end
 
-    private
-    def my_thread_params
-      params.require(:my_thread).permit(:title)
-    end
-  
-    def set_my_thread
-     #特定データの取得
-      @my_threads = MyThread.find(params[:id])
-    end
+    def post_params
+        params.permit(:title, :text)
+      end
 end
