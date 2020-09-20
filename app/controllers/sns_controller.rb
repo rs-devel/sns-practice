@@ -1,4 +1,4 @@
-class SnsController < ApplicationController
+class SnsController < ActionController::Base
     def top
     end
 
