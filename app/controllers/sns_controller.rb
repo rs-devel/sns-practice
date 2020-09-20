@@ -6,6 +6,7 @@ class SnsController < ActionController::Base
     end
 
     def show
+        @posts = Post.all
     end
 
     def new
