@@ -1,4 +1,5 @@
 class SnsController < ActionController::Base
+    layout 'app'
     def top
     end
 
