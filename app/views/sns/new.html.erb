@@ -1,0 +1,6 @@
+<h1>投稿画面</h1>
+<%= form_with model: @post do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field  :title %>
+  <%= form.submit %>
+<% end %>
